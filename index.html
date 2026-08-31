@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarefas a Fazer</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <div class="cabecalho">
+            <img src="assets/images/logo.png" alt="Logo Tarefas a Fazer" class="logo">
+            <h1>Tarefas a Fazer</h1>
+        </div>
+        <div class="area-adicionar">
+            <input type="text" id="adicionarTarefa" placeholder="Digite uma tarefa">
+        
+            <button id="botaoAdicionar">Adicionar</button>
+
+            <p id="mensagemErro" class="oculto">Você atingiu o limite de 10 tarefas adicionadas. Remova alguma antes de adicionar novas.</p>
+
+            <p id="mensagemVazio" class="oculto">O campo de adicionar tarefas não pode estar em branco.</p>
+        </div>
+        <div>
+            <ul id="listaTarefas"></ul>
+        </div>
+        <div>
+            <h2>Tarefas Concluídas</h2>
+            <ul id="listaConcluidas"></ul>
+        </div>
+    </div>
+    <div id="overlayEdicao" class="overlay oculto">
+        <div class="modal">
+            <h3>Editar Tarefa</h3>
+            <input type="text" id="inputEdicaoModal">
+            <div class="modal-botoes">
+                <button id="botaoCancelarEdicao">Cancelar</button>
+                <button id="botaoConfirmarEdicao">OK</button>
+            </div>
+        </div>
+    </div>
+    <div id="overlayRemocao" class="overlay oculto">
+        <div class="modal">
+            <h3>Remover Tarefa</h3>
+            <p id="textoConfirmacaoRemocao"></p>
+            <div class="modal-botoes">
+                <button id="botaoCancelarRemocao">Cancelar</button>
+                <button id="botaoConfirmarRemocao">Remover</button>
+            </div>
+        </div>
+    </div>
+    <div id="overlayDetalhes" class="overlay oculto">
+        <div class="modal">
+            <h3>Tarefa Concluída</h3>
+            <p id="textoDetalhesConclusao"></p>
+            <div class="modal-botoes">
+                <button id="botaoFecharDetalhes">OK</button>
+            </div>
+        </div>
+    </div>
+    <div id="toast" class="toast oculto"></div>
+</body>
+</html>
