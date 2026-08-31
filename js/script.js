@@ -80,6 +80,7 @@ function criarItemTarefa(texto, concluida = false, dataConclusao = null) {
         botaoEditar.remove()
         botaoConcluir.remove()
         botaoRemover.remove()
+        item.onclick = () => mostrarDetalhesConclusao(item)
 
         const dica = document.createElement("span")
         dica.classList.add("dica")
@@ -220,18 +221,5 @@ function editarTarefa(spanTexto) {
 
     inputEdicaoModal.addEventListener("keydown", (evento) => {
         if (evento.key === "Enter") botaoConfirmarEdicao.click()
-    })
-
-    function salvarEdicao() {
-        const novoTexto = inputEdicao.value.trim()
-        const spanNovo = document.createElement("span")
-        spanNovo.textContent = novoTexto === "" ? textoAtual : capitalizar(novoTexto)
-        inputEdicao.replaceWith(spanNovo)
-        salvarTarefas()
-    }
-
-    inputEdicao.addEventListener("blur", salvarEdicao)
-    inputEdicao.addEventListener("keydown", (evento) => {
-        if (evento.key === "Enter") inputEdicao.blur()
     })
 }
