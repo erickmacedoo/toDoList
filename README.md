@@ -50,7 +50,7 @@ O sistema permite ao usuário cadastrar, editar, concluir e remover tarefas de u
 ## Estrutura de pastas
 
 ```
-lista-de-tarefas/
+toDoList/
 │
 ├── index.html
 │
