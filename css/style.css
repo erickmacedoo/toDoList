@@ -167,6 +167,10 @@ li.tarefa button:nth-of-type(3) {
     font-weight: 500;
 }
 
+.concluida .horario-conclusao {
+    text-decoration: none;
+}
+
 .concluida .dica {
     text-decoration: none;
 }
