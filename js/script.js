@@ -159,6 +159,12 @@ function mostrarToast(mensagem, tipo = "sucesso") {
 
 botaoAdicionar.addEventListener("click", adicionarTarefa)
 
+input.addEventListener("keydown", (evento) => {
+    if (evento.key === "Enter") {
+        adicionarTarefa()
+    }
+})
+
 function limitarTarefas() {
     const tarefas = lista.getElementsByClassName("tarefa")
 
