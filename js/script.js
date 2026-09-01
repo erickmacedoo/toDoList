@@ -71,41 +71,38 @@ function criarItemTarefa(texto, concluida = false, dataConclusao = null) {
     botaoConcluir.textContent = "Concluir"
     botaoConcluir.onclick = () => {
         const agora = new Date()
-        const dataFormatada = agora.toLocaleDateString("pt-BR")
         const horaFormatada = agora.toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit", })
-        const dataHora = `${dataFormatada} às ${horaFormatada}`
 
         item.classList.add("concluida")
-        item.dataset.dataConclusao = dataHora
+        item.dataset.dataConclusao = horaFormatada
         botaoEditar.remove()
         botaoConcluir.remove()
         botaoRemover.remove()
-        item.onclick = () => mostrarDetalhesConclusao(item)
 
-        const dica = document.createElement("span")
-        dica.classList.add("dica")
-        dica.textContent = "(clique para ver os detalhes)"
-        item.appendChild(dica)
+        const horario = document.createElement("span")
+        horario.classList.add("horario-conclusao")
+        horario.textContent = horaFormatada
+        item.appendChild(horario)
 
         listaConcluidas.appendChild(item)
         limitarTarefas()
         salvarTarefas()
-        mostrarToast(`Tarefa concluída em ${dataHora}`, "sucesso")
+        mostrarToast(`Tarefa concluída em ${horaFormatada}`, "sucesso")
     }
     item.appendChild(botaoConcluir)
 
     if (concluida) {
         item.classList.add("concluida")
         item.dataset.dataConclusao = dataConclusao
+
         botaoEditar.remove()
         botaoConcluir.remove()
         botaoRemover.remove()
-        item.onclick = () => mostrarDetalhesConclusao(item)
 
-        const dica = document.createElement("span")
-        dica.classList.add("dica")
-        dica.textContent = "(clique para ver os detalhes)"
-        item.appendChild(dica)
+        const horario = document.createElement("span")
+        horario.classList.add("horario-conclusao")
+        horario.textContent = dataConclusao
+        item.appendChild(horario)
 
         listaConcluidas.appendChild(item)
     } else {

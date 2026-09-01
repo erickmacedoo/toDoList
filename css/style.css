@@ -154,7 +154,6 @@ li.tarefa button:nth-of-type(3) {
 .concluida {
     background-color: #f1f2f6;
     opacity: 0.85;
-    cursor: pointer;
 }
 
 .concluida span {
@@ -162,11 +161,10 @@ li.tarefa button:nth-of-type(3) {
     color: #8b93a1;
 }
 
-.dica {
-    font-size: 0.8rem;
-    color: #aab2bd;
-    font-style: italic;
-    margin-left: 8px;
+.horario-conclusao {
+    font-size: 0.85rem;
+    color: #9aa5b1;
+    font-weight: 500;
 }
 
 .concluida .dica {
