@@ -12,9 +12,6 @@ const overlayRemocao = document.getElementById("overlayRemocao")
 const textoConfirmacaoRemocao = document.getElementById("textoConfirmacaoRemocao")
 const botaoCancelarRemocao = document.getElementById("botaoCancelarRemocao")
 const botaoConfirmarRemocao = document.getElementById("botaoConfirmarRemocao")
-const overlayDetalhes = document.getElementById("overlayDetalhes")
-const textoDetalhesConclusao = document.getElementById("textoDetalhesConclusao")
-const botaoFecharDetalhes = document.getElementById("botaoFecharDetalhes")
 const toast = document.getElementById("toast")
 
 let spanEmEdicao = null
@@ -121,16 +118,6 @@ botaoConfirmarRemocao.onclick = () => {
 botaoCancelarRemocao.onclick = () => {
     overlayRemocao.classList.add("oculto")
 }
-
-function mostrarDetalhesConclusao(item) {
-    textoDetalhesConclusao.textContent = `Finalizada em: ${item.dataset.dataConclusao}`
-    overlayDetalhes.classList.remove("oculto")
-}
-
-botaoFecharDetalhes.onclick = () => {
-    overlayDetalhes.classList.add("oculto")
-}
-
 
 function mostrarToast(mensagem, tipo = "sucesso") {
     clearTimeout(toastTimeout)
