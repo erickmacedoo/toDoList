@@ -120,7 +120,7 @@ function criarItemTarefa(texto, concluida = false, dataConclusao = null) {
         item.appendChild(horario)
 
         const botaoDesfazer = document.createElement("button")
-        botaoDesfazer.textContent = "Desfazer conclusão ↩️"
+        botaoDesfazer.textContent = "↩️ Desfazer conclusão"
         botaoDesfazer.classList.add("botao-desfazer")
         botaoDesfazer.onclick = () => {
             item.classList.remove("concluida")
