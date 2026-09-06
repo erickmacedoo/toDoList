@@ -14,13 +14,15 @@
             <h1>Tarefas a Fazer</h1>
         </div>
         <div class="area-adicionar">
-            <input type="text" id="adicionarTarefa" placeholder="Digite uma tarefa">
+            <input type="text" id="adicionarTarefa" placeholder="Digite uma tarefa" maxlength="70">
         
             <button id="botaoAdicionar">Adicionar</button>
 
             <p id="mensagemErro" class="oculto">Você atingiu o limite de 10 tarefas adicionadas. Remova alguma antes de adicionar novas.</p>
 
             <p id="mensagemVazio" class="oculto">O campo de adicionar tarefas não pode estar em branco.</p>
+
+            <p id="mensagemLimiteCaracteres" class="oculto">Você atingiu o limite de caracteres. Diminua o texto.</p>
         </div>
         <div>
             <ul id="listaTarefas"></ul>

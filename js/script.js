@@ -12,6 +12,7 @@ const overlayRemocao = document.getElementById("overlayRemocao")
 const textoConfirmacaoRemocao = document.getElementById("textoConfirmacaoRemocao")
 const botaoCancelarRemocao = document.getElementById("botaoCancelarRemocao")
 const botaoConfirmarRemocao = document.getElementById("botaoConfirmarRemocao")
+const mensagemLimiteCaracteres = document.getElementById("mensagemLimiteCaracteres")
 const toast = document.getElementById("toast")
 
 let spanEmEdicao = null
@@ -20,6 +21,8 @@ let toastTimeout = null
 let toastFadeTimeout = null
 
 function adicionarTarefa() {
+    if(botaoAdicionar.disabled) return
+
     const texto = input.value.trim()
 
     if (texto === "") {
@@ -28,9 +31,6 @@ function adicionarTarefa() {
     } 
 
     mensagemVazio.classList.add("oculto")
-    input.addEventListener("input", () => {
-        mensagemVazio.classList.add("oculto")
-    })
 
     const textoFormatado = capitalizar(texto)
     criarItemTarefa(textoFormatado)
@@ -82,7 +82,7 @@ function criarItemTarefa(texto, concluida = false, dataConclusao = null) {
         item.appendChild(horario)
 
         const botaoDesfazer = document.createElement("button")
-        botaoDesfazer.textContent = "Desfazer conclusão ↩️"
+        botaoDesfazer.textContent = "↩️ Desfazer conclusão"
         botaoDesfazer.classList.add("botao-desfazer")
         botaoDesfazer.onclick = () => {
             item.classList.remove("concluida")
@@ -178,6 +178,11 @@ function mostrarToast(mensagem, tipo = "sucesso") {
 }
 
 botaoAdicionar.addEventListener("click", adicionarTarefa)
+
+input.addEventListener("input", () => {
+        mensagemVazio.classList.add("oculto")
+        mensagemLimiteCaracteres.classList.toggle("oculto", input.value.length <= 70)
+    })
 
 input.addEventListener("keydown", (evento) => {
     if (evento.key === "Enter") {
