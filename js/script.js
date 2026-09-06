@@ -50,12 +50,12 @@ function criarItemTarefa(texto, concluida = false, dataConclusao = null) {
     item.appendChild(spanTexto)
 
     const botaoEditar = document.createElement("button")
-    botaoEditar.textContent = "Editar"
+    botaoEditar.textContent = "📝 Editar"
     botaoEditar.onclick = () => editarTarefa(item.querySelector("span"))
     item.appendChild(botaoEditar)
 
     const botaoRemover = document.createElement("button")
-    botaoRemover.textContent = "Remover"
+    botaoRemover.textContent = "🗑️ Remover"
     botaoRemover.onclick = () => { 
         itemEmRemocao = item
         textoConfirmacaoRemocao.textContent = `Tem certeza que deseja remover a tarefa "${item.querySelector("span").textContent}"?`
@@ -65,7 +65,7 @@ function criarItemTarefa(texto, concluida = false, dataConclusao = null) {
     item.appendChild(botaoRemover)
 
     const botaoConcluir = document.createElement("button")
-    botaoConcluir.textContent = "Concluir"
+    botaoConcluir.textContent = "✅ Concluir"
     botaoConcluir.onclick = () => {
         const agora = new Date()
         const horaFormatada = agora.toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit", })
@@ -82,7 +82,7 @@ function criarItemTarefa(texto, concluida = false, dataConclusao = null) {
         item.appendChild(horario)
 
         const botaoDesfazer = document.createElement("button")
-        botaoDesfazer.textContent = "Desfazer conclusão"
+        botaoDesfazer.textContent = "Desfazer conclusão ↩️"
         botaoDesfazer.classList.add("botao-desfazer")
         botaoDesfazer.onclick = () => {
             item.classList.remove("concluida")
@@ -120,7 +120,7 @@ function criarItemTarefa(texto, concluida = false, dataConclusao = null) {
         item.appendChild(horario)
 
         const botaoDesfazer = document.createElement("button")
-        botaoDesfazer.textContent = "Desfazer conclusão"
+        botaoDesfazer.textContent = "Desfazer conclusão ↩️"
         botaoDesfazer.classList.add("botao-desfazer")
         botaoDesfazer.onclick = () => {
             item.classList.remove("concluida")
