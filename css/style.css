@@ -266,6 +266,8 @@ li.tarefa button:nth-of-type(3) {
 .modal p {
     margin-bottom: 20px;
     color: #40474f;
+    word-break: break-word;
+    overflow-wrap: break-word;
 }
 
 #botaoConfirmarRemocao {

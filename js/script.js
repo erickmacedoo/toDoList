@@ -13,6 +13,7 @@ const textoConfirmacaoRemocao = document.getElementById("textoConfirmacaoRemocao
 const botaoCancelarRemocao = document.getElementById("botaoCancelarRemocao")
 const botaoConfirmarRemocao = document.getElementById("botaoConfirmarRemocao")
 const mensagemLimiteCaracteres = document.getElementById("mensagemLimiteCaracteres")
+const mensagemLimiteEdicao = document.getElementById("mensagemLimiteEdicao")
 const toast = document.getElementById("toast")
 
 let spanEmEdicao = null
@@ -245,6 +246,7 @@ function editarTarefa(spanTexto) {
     inputEdicaoModal.value = spanTexto.textContent
     overlayEdicao.classList.remove("oculto")
     inputEdicaoModal.focus()
+    mensagemLimiteEdicao.classList.add("oculto")
 
     botaoConfirmarEdicao.onclick = () => {
         const novoTexto = inputEdicaoModal.value.trim()
@@ -262,5 +264,9 @@ function editarTarefa(spanTexto) {
 
     inputEdicaoModal.addEventListener("keydown", (evento) => {
         if (evento.key === "Enter") botaoConfirmarEdicao.click()
+    })
+
+    inputEdicaoModal.addEventListener("input", () => {
+        mensagemLimiteEdicao.classList.toggle("oculto", inputEdicaoModal.value.length <= 70)
     })
 }

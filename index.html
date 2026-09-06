@@ -35,7 +35,8 @@
     <div id="overlayEdicao" class="overlay oculto">
         <div class="modal">
             <h3>Editar Tarefa</h3>
-            <input type="text" id="inputEdicaoModal">
+            <input type="text" id="inputEdicaoModal" maxlength="70">
+            <p id="mensagemLimiteEdicao" class="oculto">Você atingiu o limite de caracteres. Reduza o texto.</p>
             <div class="modal-botoes">
                 <button id="botaoCancelarEdicao">Cancelar</button>
                 <button id="botaoConfirmarEdicao">OK</button>
