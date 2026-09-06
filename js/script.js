@@ -36,6 +36,7 @@ function adicionarTarefa() {
     const textoFormatado = capitalizar(texto)
     criarItemTarefa(textoFormatado)
     input.value = ""
+    mensagemLimiteCaracteres.classList.add("oculto")
 
     limitarTarefas()
     salvarTarefas()
