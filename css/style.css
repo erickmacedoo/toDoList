@@ -310,6 +310,11 @@ li.tarefa button:nth-of-type(3) {
     display: none;
 }
 
+.toast--erro {
+    background-color: #fbdfe3;
+    color: #a85a63;
+}
+
 #botaoFecharDetalhes {
     background-color: #a9c6e8;
     color: #2f3b52;

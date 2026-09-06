@@ -85,6 +85,10 @@ function criarItemTarefa(texto, concluida = false, dataConclusao = null) {
         botaoDesfazer.textContent = "↩️ Desfazer conclusão"
         botaoDesfazer.classList.add("botao-desfazer")
         botaoDesfazer.onclick = () => {
+            if (lista.getElementsByClassName("tarefa").length >= 10) {
+                mostrarToast("Não é possível desfazer a conclusão, limite de 10 tarefas atingido!", "erro")
+            }
+
             item.classList.remove("concluida")
             delete item.dataset.dataConclusao
             horario.remove()
@@ -123,6 +127,10 @@ function criarItemTarefa(texto, concluida = false, dataConclusao = null) {
         botaoDesfazer.textContent = "↩️ Desfazer conclusão"
         botaoDesfazer.classList.add("botao-desfazer")
         botaoDesfazer.onclick = () => {
+            if (lista.getElementsByClassName("tarefa").length >= 10) {
+                mostrarToast("Não é possível desfazer a conclusão, limite de 10 tarefas atingido!", "erro")
+            }
+            
             item.classList.remove("concluida")
             delete item.dataset.dataConclusao
             horario.remove()
