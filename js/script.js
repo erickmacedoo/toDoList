@@ -78,8 +78,26 @@ function criarItemTarefa(texto, concluida = false, dataConclusao = null) {
 
         const horario = document.createElement("span")
         horario.classList.add("horario-conclusao")
-        horario.textContent = horaFormatada
+        horario.textContent = `Concluída às ${horaFormatada}`
         item.appendChild(horario)
+
+        const botaoDesfazer = document.createElement("button")
+        botaoDesfazer.textContent = "Desfazer conclusão"
+        botaoDesfazer.classList.add("botao-desfazer")
+        botaoDesfazer.onclick = () => {
+            item.classList.remove("concluida")
+            delete item.dataset.dataConclusao
+            horario.remove()
+            botaoDesfazer.remove()
+            item.appendChild(botaoEditar)
+            item.appendChild(botaoRemover)
+            item.appendChild(botaoConcluir)
+            lista.appendChild(item)
+            limitarTarefas()
+            salvarTarefas()
+            mostrarToast("Conclusão desfeita!", "editar")
+        }
+        item.appendChild(botaoDesfazer)
 
         listaConcluidas.appendChild(item)
         limitarTarefas()
@@ -98,8 +116,26 @@ function criarItemTarefa(texto, concluida = false, dataConclusao = null) {
 
         const horario = document.createElement("span")
         horario.classList.add("horario-conclusao")
-        horario.textContent = dataConclusao
+        horario.textContent = `Concluída às ${dataConclusao}`
         item.appendChild(horario)
+
+        const botaoDesfazer = document.createElement("button")
+        botaoDesfazer.textContent = "Desfazer conclusão"
+        botaoDesfazer.classList.add("botao-desfazer")
+        botaoDesfazer.onclick = () => {
+            item.classList.remove("concluida")
+            delete item.dataset.dataConclusao
+            horario.remove()
+            botaoDesfazer.remove()
+            item.appendChild(botaoEditar)
+            item.appendChild(botaoRemover)
+            item.appendChild(botaoConcluir)
+            lista.appendChild(item)
+            limitarTarefas()
+            salvarTarefas()
+            mostrarToast("Conclusão desfeita!", "editar")
+    }
+    item.appendChild(botaoDesfazer)
 
         listaConcluidas.appendChild(item)
     } else {
