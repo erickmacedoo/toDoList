@@ -87,6 +87,7 @@ function criarItemTarefa(texto, concluida = false, dataConclusao = null) {
         botaoDesfazer.onclick = () => {
             if (lista.getElementsByClassName("tarefa").length >= 10) {
                 mostrarToast("Não é possível desfazer a conclusão, limite de 10 tarefas atingido!", "erro")
+                return
             }
 
             item.classList.remove("concluida")
@@ -129,6 +130,7 @@ function criarItemTarefa(texto, concluida = false, dataConclusao = null) {
         botaoDesfazer.onclick = () => {
             if (lista.getElementsByClassName("tarefa").length >= 10) {
                 mostrarToast("Não é possível desfazer a conclusão, limite de 10 tarefas atingido!", "erro")
+                return
             }
             
             item.classList.remove("concluida")
