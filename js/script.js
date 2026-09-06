@@ -192,7 +192,7 @@ botaoAdicionar.addEventListener("click", adicionarTarefa)
 
 input.addEventListener("input", () => {
         mensagemVazio.classList.add("oculto")
-        mensagemLimiteCaracteres.classList.toggle("oculto", input.value.length <= 70)
+        mensagemLimiteCaracteres.classList.toggle("oculto", input.value.length < 70)
     })
 
 input.addEventListener("keydown", (evento) => {
@@ -267,6 +267,6 @@ function editarTarefa(spanTexto) {
     })
 
     inputEdicaoModal.addEventListener("input", () => {
-        mensagemLimiteEdicao.classList.toggle("oculto", inputEdicaoModal.value.length <= 70)
+        mensagemLimiteEdicao.classList.toggle("oculto", inputEdicaoModal.value.length < 70)
     })
 }
